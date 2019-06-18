@@ -13,32 +13,23 @@ public class ZipCodeWilmington {
     }
 
     public void hostLecture(Teacher teacher, double numberOfHours) {
-        Student[] learners = getStudentArray();
+        Student[] learners = students.toArray();
         teacher.lecture(learners, numberOfHours);
     }
 
     public void hostLecture(Long id, double numberOfHours) {
-        Student[] learners = getStudentArray();
-        Teacher teacher = (Teacher)instructors.findById(id);
+        Student[] learners = students.toArray();
+        Teacher teacher = instructors.findById(id);
         teacher.lecture(learners, numberOfHours);
     }
 
     public HashMap getStudyMap() {
-        Student[] studentArray = getStudentArray();
+        Student[] studentArray = students.toArray();
         HashMap <Long, Double> map = new HashMap<Long, Double>();
         for (Student student : studentArray) map.put(student.getId(), student.getTotalStudyTime());
         return map;
     }
-    private Student[] getStudentArray() {
-        Person[] people = students.toArray();
-        Student[] learners = new Student[people.length];
-        int idx = 0;
-        for (Person p : people) {
-            learners[idx] = (Student)p;
-            idx++;
-        }
-        return learners;
-    }
+
 
 
 
