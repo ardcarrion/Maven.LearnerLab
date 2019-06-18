@@ -22,4 +22,8 @@ public class Person {
     public void setName(String name) {
         this.name = name;
     }
+
+    private void testMe() {
+        System.out.printf("here i am %d", 10);
+    }
 }
