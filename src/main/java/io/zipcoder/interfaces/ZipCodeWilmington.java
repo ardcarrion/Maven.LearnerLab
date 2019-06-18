@@ -22,6 +22,10 @@ public class ZipCodeWilmington {
         Teacher teacher = instructors.findById(id);
         teacher.lecture(learners, numberOfHours);
     }
+    public void hostLecture(Educator educator, double numberOfHours) {
+        Student[] learners = students.toArray();
+        educator.lecture(learners, numberOfHours);
+    }
 
     public HashMap getStudyMap() {
         Student[] studentArray = students.toArray();
