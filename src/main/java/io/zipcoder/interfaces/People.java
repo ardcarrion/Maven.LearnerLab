@@ -34,6 +34,10 @@ abstract class People<E extends Person> implements Iterable {
         personList.remove(e);
 
     }
+    public void remove(long id) {
+        E e = findById(id);
+        personList.remove(e);
+    }
 
     public void removeAll() {
         personList.removeAll(personList);
@@ -45,7 +49,7 @@ abstract class People<E extends Person> implements Iterable {
 
     abstract E[] toArray();
 
-    public Iterator iterator() {
+    public Iterator<E> iterator() {
         return personList.iterator();
     }
 }
