@@ -32,4 +32,14 @@ public class TestEducator {
         assertEquals(expected, actualSecondHoursStudied);
 
     }
+    @Test
+    public void timeWorkedTest() {
+        Student first = new Student(Long.MIN_VALUE, "Foo");
+        Student second = new Student(Long.MAX_VALUE, "Bar");
+        Student[] students = {first, second};
+        Educator.DOLIO.lecture(students,  10.0);
+        Double expected = 10.0;
+        Double actual = Educator.DOLIO.getTimeWorked();
+        assertEquals(expected,actual);
+    }
 }
